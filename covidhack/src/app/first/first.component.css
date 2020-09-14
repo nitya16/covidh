@@ -1,0 +1,23 @@
+.scrollit {
+    overflow:scroll;
+    height:300px;
+    
+    
+   
+}
+
+.head{
+    margin-top: 1cm ;
+    padding : 20px;
+    background-color: rgb(175, 43, 43);
+    font-size: medium;
+    font-style: normal;
+    text-align: left;
+    font-size: larger;
+    font-weight: bolder;
+}
+.sl{
+    width : 200px;
+    background-color: rgba(212, 226, 233, 0.644);
+    margin-bottom: 10px;
+}

@@ -1,0 +1,134 @@
+
+<h1 class="head"> Covid - 19 Dashboard</h1>
+<div class="container ">
+<div class="row">
+<div class="col-lg-5 col-sm-5 col-xs-5 col-md-5">
+    <div class="container">
+  
+    <div class = "shadow p-3 mb-5 bg-white rounded">
+    <div class="scrollit">
+    <table class="table">
+      <thead class="thead-dark"> 
+          <tr>
+            <th>State Name</th>
+            <th>Helpline number</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let con of Response.data.contacts.regional">
+          <td>{{ con.loc }}</td>
+          <td>{{ con.number }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
+</div>
+
+    <div class="col-lg-7 col-sm-7 col-xs-7 col-md-7">
+  <div class="container">
+  
+    <div class = "shadow p-3 mb-5 bg-white rounded">
+    <div class="scrollit">
+    <table class="table">
+      <thead class="thead-dark">
+          <tr>
+            <th>State Name and Helpline</th>
+            <th>Notifications</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let not of Recieve.data.notifications">
+          <td>{{ not.title }}</td>
+          <td> <a href = "#" class = "stretched-link">{{ not.link }}</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  </div>
+    </div>
+
+</div>
+</div>
+
+<div class="container" class = "shadow p-3 mb-5 bg-white rounded">
+    <div class="scrollit">
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+          <tr>
+            <th>State Name</th>
+            <th>Rural Hospitals</th>
+            <th>Rural Beds</th>
+            <th>Urban Hospitals</th>
+            <th>Urban Beds</th>
+            <th>Total Hospitals</th>
+            <th>Total Beds(Statewise)</th>
+
+          </tr>
+      </thead >
+      <tbody>
+        <tr *ngFor="let bed of Total.data.regional" >
+          <td>{{ bed.state }}</td>
+          <td>{{ bed.ruralHospitals }}</td>
+          <td>{{ bed.ruralBeds }}</td>
+          <td>{{ bed.urbanHospitals }}</td>
+          <td>{{ bed.urbanBeds }}</td>
+          <td>{{ bed.totalHospitals }}</td>
+          <td>{{ bed.totalBeds }}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  
+  </div>
+
+
+  
+    
+
+
+
+
+
+  <div class="container"  class = "shadow p-3 mb-5 bg-white rounded">
+    <div class="scrollit" height = "200px" margin-top = "2cm">
+        <div class="container ">
+            <div class="row">
+            <div class="col-lg-5 col-sm-5 col-xs-5 col-md-5">
+        <input  class="form-control" class="sl" id="myInput" type="text" placeholder="Select State" >
+        <br>
+            </div>
+
+            <div class="col-lg-5 col-sm-5 col-xs-5 col-md-5">
+                <input  class="form-control" class="sl" id="myInput" type="text" placeholder="Select Type" >
+                <br>
+                    </div>
+
+            </div>
+        </div>
+    <table class="table table-bordered" >
+      <thead class="thead-dark">
+          <tr>
+            <th>State Name</th>
+            <th>Institute Name</th>
+            <th>city</th>
+            <th> Type</th>
+            <th>AdmissionCapacity</th>
+            <th>HospitalsBeds</th>
+          </tr>
+      </thead>
+      <tbody id="myTable">
+        <tr *ngFor="let own of Medical.data.medicalColleges">
+          <td>{{ own.state }}</td>
+          <td>{{ own.name }}</td>
+          <td>{{ own.city }}</td>
+          <td>{{ own.ownership }}</td>
+          <td>{{ own.admissionCapacity }}</td>
+          <td>{{ own.hospitalBeds }}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
